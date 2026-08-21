@@ -210,14 +210,14 @@ export default function InventoryView({
             placeholder="Buscar por código, nombre, categoría, ubicación..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="w-full rounded-xl border border-slate-300 py-3 pl-11 pr-4 transition focus:border-blue-500 focus:outline-none focus:ring-4 focus:ring-blue-100"
+            className="w-full rounded-xl border border-slate-300 bg-white py-3 pl-11 pr-4 text-slate-800 transition focus:border-blue-500 focus:outline-none focus:ring-4 focus:ring-blue-100"
           />
         </div>
         <div className="mb-6 grid gap-3 md:grid-cols-2 xl:grid-cols-5">
-          <select aria-label="Filtrar por categoría" value={category} onChange={(event) => setCategory(event.target.value)} className="rounded-xl border border-slate-300 px-3 py-2"><option value="">Todas las categorías</option>{categories.map((value) => <option key={value}>{value}</option>)}</select>
-          <select aria-label="Filtrar por bolsa" value={bagId} onChange={(event) => setBagId(event.target.value)} className="rounded-xl border border-slate-300 px-3 py-2"><option value="">Todas las bolsas</option><option value="none">Sin bolsa</option>{bags.map((bag) => <option key={bag.id} value={bag.id}>{bag.nombre}</option>)}</select>
-          <select aria-label="Filtrar por estado" value={state} onChange={(event) => setState(event.target.value)} className="rounded-xl border border-slate-300 px-3 py-2"><option value="">Todos los estados</option>{["Disponible", "Prestado", "Agotado", "Dañado"].map((value) => <option key={value}>{value}</option>)}</select>
-          <input aria-label="Filtrar por ubicación" value={location} onChange={(event) => setLocation(event.target.value)} placeholder="Filtrar ubicación" className="rounded-xl border border-slate-300 px-3 py-2" />
+          <select aria-label="Filtrar por categoría" value={category} onChange={(event) => setCategory(event.target.value)} className="rounded-xl border border-slate-300 bg-white px-3 py-2 text-slate-800"><option value="">Todas las categorías</option>{categories.map((value) => <option key={value}>{value}</option>)}</select>
+          <select aria-label="Filtrar por bolsa" value={bagId} onChange={(event) => setBagId(event.target.value)} className="rounded-xl border border-slate-300 bg-white px-3 py-2 text-slate-800"><option value="">Todas las bolsas</option><option value="none">Sin bolsa</option>{bags.map((bag) => <option key={bag.id} value={bag.id}>{bag.nombre}</option>)}</select>
+          <select aria-label="Filtrar por estado" value={state} onChange={(event) => setState(event.target.value)} className="rounded-xl border border-slate-300 bg-white px-3 py-2 text-slate-800"><option value="">Todos los estados</option>{["Disponible", "Prestado", "Agotado", "Dañado"].map((value) => <option key={value}>{value}</option>)}</select>
+          <input aria-label="Filtrar por ubicación" value={location} onChange={(event) => setLocation(event.target.value)} placeholder="Filtrar ubicación" className="rounded-xl border border-slate-300 bg-white px-3 py-2 text-slate-800" />
           <Button type="button" variant="secondary" onClick={clearFilters}>Limpiar filtros</Button>
         </div>
 

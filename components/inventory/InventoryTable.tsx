@@ -56,7 +56,7 @@ function SortableHeader({ title, field, onSort }: SortableHeaderProps) {
   return (
     <th
       onClick={() => onSort(field)}
-      className="cursor-pointer select-none px-6 py-4 text-left font-semibold hover:bg-slate-200"
+      className="cursor-pointer select-none px-6 py-4 text-left font-semibold text-slate-700 hover:bg-slate-200"
     >
       <div className="flex items-center gap-2">
         {title}
@@ -163,8 +163,8 @@ export default function InventoryTable({
               <SortableHeader title="Cantidad" field="cantidad" onSort={sortBy} />
               <SortableHeader title="Ubicación" field="ubicacion" onSort={sortBy} />
               <SortableHeader title="Estado" field="estado" onSort={sortBy} />
-              <th className="px-6 py-4 text-left font-semibold">Bolsa</th>
-              <th className="px-6 py-4 text-center">
+              <th className="px-6 py-4 text-left font-semibold text-slate-700">Bolsa</th>
+              <th className="px-6 py-4 text-center font-semibold text-slate-700">
                 Acciones
               </th>
             </tr>
@@ -174,7 +174,7 @@ export default function InventoryTable({
             {current.map((component) => (
               <tr
                 key={component.id}
-                className="border-t transition hover:bg-slate-50"
+                className="border-t transition hover:bg-slate-50 text-slate-800"
               >
                 <td className="px-6 py-4 font-medium">
                   {component.codigo}
