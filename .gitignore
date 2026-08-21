@@ -41,3 +41,17 @@ yarn-error.log*
 next-env.d.ts
 
 /lib/generated/prisma
+
+# Next.js
+.next/
+out/
+
+# Dependencies
+node_modules/
+
+# Large/generated files
+.next.zip
+node_modules.zip
+
+# Local database
+*.db
