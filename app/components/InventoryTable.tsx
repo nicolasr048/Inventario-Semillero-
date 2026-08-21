@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { InventoryItem, ItemCategory, ItemStatus } from '../types/inventory';
 import { 
   Search, Filter, Edit3, Trash2, UserCheck, 
-  MapPin, AlertTriangle, Layers, Tag, ChevronUpDown
+  MapPin, AlertTriangle, Layers, Tag
 } from 'lucide-react';
 
 interface InventoryTableProps {
