@@ -1,0 +1,47 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Bag {
+  id          Int         @id @default(autoincrement())
+  nombre      String      @unique
+  descripcion String?
+  ubicacion   String?
+
+  components  Component[]
+
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+}
+
+model Component {
+  id             Int      @id @default(autoincrement())
+
+  codigo         String   @unique
+  nombre         String
+
+  categoria      String
+  subcategoria   String
+
+  especificacion String?
+
+  cantidad       Float
+  unidad         String
+
+  ubicacion      String
+
+  estado         String   @default("Disponible")
+
+  observaciones  String?
+
+  bagId          Int?
+  bag            Bag?     @relation(fields: [bagId], references: [id], onDelete: SetNull)
+
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+}
